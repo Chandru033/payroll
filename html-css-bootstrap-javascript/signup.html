@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | Pay Fast Payroll</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+
+<body>
+    <div class="signup-page">
+        <h1>Sign Up</h1>
+        <form id="signupForm"> 
+            <div class="input-box">
+                <input type="text" placeholder="First Name" id="firstName" required>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Last Name" id="lastName" required>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Email" id="email" required>
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one digit, one lowercase, one uppercase, and be at least 8 characters long" required>
+                    <i class='bx bxs-lock'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Confirm Password" id="confirmPassword" required>
+            </div>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <p id="successMessage" class="success-message"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const signupForm = document.getElementById("signupForm");
+    const successMessage = document.getElementById("successMessage");
+  
+    signupForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+  
+        // Perform signup validation (e.g., check passwords match)
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirmPassword").value;
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+  
+        // Simulate successful signup (replace with actual backend logic)
+        setTimeout(() => {
+            // Show success message
+            successMessage.textContent = "Sign up successful! Redirecting to login page...";
+            // Redirect to login page after 3 seconds
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 3000);
+        }, 1000);
+    });
+});
+
+    </script>
+</body>
+</html>

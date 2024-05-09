@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Management System</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/employee_info.css">
+</head>
+
+
+
+<body>
+    <div class="background"></div>
+    <header>
+        <h1>Payroll processing</h1>
+        <nav class="nav-links">
+            <a href="employee-info.html" class="nav-link">Employee Information</a>
+            <a href="time-attendance.html" class="nav-link">Time and Attendance</a>
+        </nav>
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="container">
+        <section id="intro">
+            <h2>Welcome to the Payroll Management System</h2>
+            <p>Payroll is the lifeblood of any organization. It is the largest expense of any organization, but it's also the most critical.</p>
+            <p>Payroll: Where all the company's money meets all the company's employees. It isn't just about paying people; it's about managing the financial well-being of your employees. Payroll professionals: The unsung heroes of every organization</p>
+            <p>Payroll may seem like just numbers, but behind every number is a person and their livelihood. Payroll processing: Turning time into money.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Payroll Processing System. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function logout() {
+            alert("Logged out successfully!");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
