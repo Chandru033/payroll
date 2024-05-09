@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/forgot.css">
+  <title>Forgot Password</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Forgot Password</h2>
+    <form id="forgotPasswordForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Reset Password</button>
+    </form>
+    <p id="error" class="error-message"></p>
+    <p id="success" class="success-message"></p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById("forgotPasswordForm");
+      const errorElement = document.getElementById("error");
+      const successElement = document.getElementById("success");
+
+      form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const emailInput = document.getElementById("email");
+        const email = emailInput.value.trim();
+
+        if (!isValidEmail(email)) {
+          showError("Please enter a valid email address.");
+          return;
+        }
+
+        // Simulate password reset (replace this with actual backend logic)
+        setTimeout(() => {
+          showSuccess("Password reset instructions sent to your email.");
+          form.reset(); // Clear form fields after success
+        }, 1000);
+      });
+
+      function isValidEmail(email) {
+        // Basic email validation using regular expression
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+      }
+
+      function showError(message) {
+        errorElement.textContent = message;
+        errorElement.style.display = "block";
+        successElement.style.display = "none";
+      }
+
+      function showSuccess(message) {
+        successElement.textContent = message;
+        successElement.style.display = "block";
+        errorElement.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
